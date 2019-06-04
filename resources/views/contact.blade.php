@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to my weblog</h1>
-    <a href="/contact">Contact</a> us to learn more.
+    <h1>Contact Form</h1>
 </body>
 </html>
