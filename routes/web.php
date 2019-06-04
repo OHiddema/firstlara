@@ -11,18 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    $items = ['First item', 'Second item', 'Third item'];
-    $alt_tekst = 'my fantastic homepage';
-
-    
-    return view('welcome', ['items' => $items, 'title' => $alt_tekst]);
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
