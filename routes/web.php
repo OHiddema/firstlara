@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $items = ['First item', 'Second item', 'Third item'];
+    $alt_tekst = 'my fantastic homepage';
+
+    
+    return view('welcome', ['items' => $items, 'title' => $alt_tekst]);
 });
 
 Route::get('/about', function () {
