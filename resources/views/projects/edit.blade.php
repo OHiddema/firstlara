@@ -5,8 +5,8 @@
 
 
    <form method="POST" action="/projects/{{$project->id}}">
-      {{method_field('PATCH')}}
-      {{csrf_field()}}
+      @method('PATCH')
+      @csrf
 
       <input type="text" name="title" value="{{$project->title}}">
       <br><br>
@@ -17,8 +17,8 @@
 
    <br>
    <form method="POST" action="/projects/{{$project->id}}">
-      {{method_field('DELETE')}}
-      {{csrf_field()}}
+      @method('DELETE')
+      @csrf
 
       <button type="submit">Delete project</button>
    </form>
