@@ -25,13 +25,13 @@ class ProjectsController extends Controller
     }
 
     public function edit($id) {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         // below statement is shorthand for: return view('projects.edit', ['project'=>$project]);
         return view('projects.edit', compact('project'));
     }
 
     public function update($id) {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         $project->title = request('title');
         $project->description = request('description');
         $project->save();
@@ -39,7 +39,7 @@ class ProjectsController extends Controller
     }
 
     public function destroy($id) {
-        Project::find($id)->delete();
+        Project::findOrFail($id)->delete();
         return redirect('/projects');
     }
 }
