@@ -11,9 +11,9 @@
    <form method="POST" action="/projects">
       @csrf
       
-      <input type="text" name="title" placeholder="Project title here..." required>
+      <input type="text" name="title" placeholder="Project title here..." required value="{{old('title')}}">
       <br><br>
-      <textarea name="description" placeholder="Description here..." cols="30" rows="10" required></textarea>
+      <textarea name="description" placeholder="Description here..." cols="30" rows="10" required>{{old('description')}}</textarea>
       <br><br>
       <button type="submit">Create project</button>
 
