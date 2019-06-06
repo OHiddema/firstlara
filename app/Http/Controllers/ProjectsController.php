@@ -17,10 +17,7 @@ class ProjectsController extends Controller
     }
 
     public function store() {
-        $project = new Project();
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+        Project::create(request(['title', 'description']));
         return redirect('/projects');
     }
 
@@ -36,8 +33,8 @@ class ProjectsController extends Controller
         return redirect('/projects');        
     }
 
-    public function destroy($id) {
-        Project::findOrFail($id)->delete();
+    public function destroy(Project $project) {
+        $project->delete();
         return redirect('/projects');
     }
 
