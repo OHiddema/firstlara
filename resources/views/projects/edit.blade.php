@@ -14,4 +14,12 @@
       <br><br>
       <button type="submit">Update project</button>
    </form>
+
+   <br>
+   <form method="POST" action="/projects/{{$project->id}}">
+      {{method_field('DELETE')}}
+      {{csrf_field()}}
+
+      <button type="submit">Delete project</button>
+   </form>
 @endsection
