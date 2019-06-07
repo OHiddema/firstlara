@@ -8,7 +8,7 @@ class Project extends Model
 {
     protected $guarded = [];
 
-    // Define relationship between project and tasks
+    // Get the tasks belonging to a cetrain project
     public function tasks() {
         return $this->hasMany(Task::class);
     }
